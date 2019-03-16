@@ -80,7 +80,7 @@ outline: 10px solid red;
   position: relative;
 }
 .topNavBar nav > ul > li > a {
-  font-size: 12px;
+  font-size: 16px;
   color: inherit;
   font-weight: bold;
   border-top: 3px solid transparent;
@@ -228,7 +228,7 @@ outline: 10px solid red;
   margin: 16px;
 }
 .userCard > footer.media > a:hover {
-  background: #2c97e8;
+  background: #e82c2c;
 }
 .userCard svg {
   width: 30px;
@@ -246,14 +246,14 @@ main .downloadResume-wrapper {
 main .downloadResume {
   font-size: 14px;
   line-height: 16px;
-  padding: 21px 55px;
+  padding: 15px 20px;
   border: 1px solid #cdcfde;
   background: #efefef;
   display: inline-block;
   border-right: 2px;
   color: #3d4451;
   font-weight: bold;
-  margin: 32px 0;
+  margin: 30px 180px 0px 30px;
   transition: box-shadow 0.2s;
 }
 main .downloadResume:hover {
@@ -265,7 +265,7 @@ section.portfolio {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 section.skills > h2,
 section.message>h2,
@@ -299,17 +299,29 @@ section.skills > ol > li:nth-child(even) {
   float: right;
 }
 
+.works{
+  margin-top: 20px;
+}
+.works >ol{
+  display:flex;
+ flex-wrap: wrap ;
+}
+.works >ol>li{
+  width: 33.33333%;
+  padding: 5px;
+  box-sizing: border-box;
+} 
 
 
 section.portfolio {
   text-align: center;
   margin-bottom: 150px;
   margin-top: 100px;
-  max-width: 1300px;
+  max-width: 940px;
  
 }
 section.portfolio h2{
-  margin-bottom: 36px;
+  margin-bottom: 56px;
 }
 .icon {
   width: 1em;
@@ -327,20 +339,36 @@ section.message>ol{
   
 }
 section.message>ol>li{
-  padding: 16px;
+  padding: 12px;
   border-bottom: 1px solid #ddd;
 }
-
-
-.works >ol{
-  display:flex;
- flex-wrap: wrap ;
+.message{
+  margin-bottom: 10px;
 }
-.works >ol>li{
-  padding: 10px;
+.message > input{
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.messageList >li{
   box-sizing: border-box;
-} 
-.works >ol>li>img{
-  width:33.33333%;
-  display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  border-radius: 4px;
+
 }
+
+
+#box {
+  width: 800px;
+  margin: 0 auto;
+}
+textarea {
+  width: 800px;
+}
+#li {
+  display: block;
+  border-bottom: 1px dashed #ebebeb;
+  margin: 10px 0;
+  padding: 8px 0;
+}
+
+
