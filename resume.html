@@ -185,9 +185,7 @@
 <form id="postMessageForm" style="width: 700px;margin: 50px auto;">
 <label for="">姓名</label>
 <input type="text" name="name">
-<label for="">内容</label>
-<input type="text" name="content">
-
+<textarea name="content" id="text" cols="30" rows="10" placeholder="请输入内容"></textarea>
 <input type="submit" value="提交"> 
 </form>
 
@@ -196,134 +194,8 @@
 </section>
 
 
-<div id="box">
-  <h3>留言板 </h3>
-  发布人：<input type="text" id="person" value="">
-  共<input style="border: 0;" name="" id="louceng">
-  <textarea name="" id="text" rows="10" placeholder="请输入内容"></textarea>
-  <input type="button" value="确认发布" id="btn" />
-  <h3>全部留言</h3>
-  <hr/>
-</div>
-<script>
-  var num = 0;
-  var num1 = 0;
-  var box = document.getElementById("box");
-  var text = document.getElementById("text");
-  var btn = document.getElementById("btn");
-  var person = document.getElementById("person");
-  var ul = document.createElement("ul");
-  ul.id = "ul1";
-  var time = document.createElement("div");
-  document.getElementById("louceng").value=num+"楼";
-  btn.onclick = function() {
-    //非空判断
-    if(person.value==""||person.value==null){
-      alert("发布人不允许为空！");
-      return false;
-    }
-    if(text.value==""||text.value==null){
-      alert("内容不允许为空！");
-      return false;
-    }
-    //获取时间
-    num = num+1;
-    var datetime = getTime();
-    time = document.createTextNode("发布时间：" + datetime);
-    var li = document.createElement("li");
-    li.id = "li";
-    //创建删除功能
-    var oA = document.createElement("a");
-    var oAtext = document.createTextNode("删除");
-    oA.href = "#";
-    oA.appendChild(oAtext);
-    //创建发布文本框
-    var fabu = document.createElement("textarea");
-    fabu.rows = "5";
-    fabu.style = "margin: 0px; width: 760px; height: 138px;";
-    fabu.value = text.value;
-    fabu.disabled="disabled";
-    //创建编辑功能
-    var oB = document.createElement("a");
-    var oBtext = document.createTextNode("编辑");
-    oB.href = "#";
-    oB.appendChild(oBtext);
-    //创建确认按钮
-    var butt = document.createElement("input");
-    butt.type = "button";
-    butt.value = "确认";
-    butt.style.display = "none";
-    //解决兼容问题
-    var ali = ul.getElementsByTagName("li");
-    if(ali.length == 0) {
-      ul.appendChild(li);
-    } else {
-      ul.insertBefore(li, ali[0]);
-    }
-    //添加节点
-    box.appendChild(ul);
-    var lou = document.createTextNode("第"+num+"楼");
-    var persons = document.createTextNode("发布人："+ person.value);
-    document.getElementById("person").value="";
-    var textnode = document.createTextNode("发布内容：");
-    document.getElementById("text").value="";
-    li.appendChild(lou);
-    li.appendChild(document.createElement("br"));
-    li.appendChild(persons);
-    li.appendChild(document.createElement("br"));
-    li.appendChild(textnode);
-    li.appendChild(document.createElement("br"));
-    li.appendChild(fabu);
-    li.appendChild(time);
-    li.appendChild(oA);
-    li.appendChild(oB);
-    li.appendChild(butt);
-    //删除
-    oA.onclick = function() {
-      ul.removeChild(this.parentNode);
-      //删除时更新
-      num1++;//删除次数
-      document.getElementById("louceng").value=num-num1+"楼";
-    };
-    //编辑
-    oB.onclick = function() {
-      fabu.disabled = "";
-      butt.style.display = "block";
-    }
-    //确认更改
-    butt.onclick = function() {
-      fabu.disabled="disabled";
-      butt.style.display = "none";
-    }
-    //楼层展示
-    document.getElementById("louceng").value=num-num1+"楼";
-  }
-</script>
 
-<section>
-  <h2>画皮卡丘</h2>
-<div class="code-wrapper"><pre id="code"></pre></div>
-<div class="preview-wrapper">
-  <div class="preview">
-    <div class="wrapper">
-      <div class="lowerLip-wrapper"><div class="lowerLip"></div></div>
-      <div class="nose"></div>
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-      <div class="face left"></div>
-      <div class="face right"></div>
-      <div class="upperLip left"></div>
-      <div class="upperLip right"></div>
-    </div>
-  </div>
-</div>
-<div class="actions">
-  <button data-speed="slow">慢速</button>
-  <button data-speed="normal" class="active">中速</button>
-  <button data-speed="fast">快速</button>
-</div>
-</section>
-
+<link rel="stylesheet" href="./pikachu/index.html"></link>
 <link  src="./pikachu/css/default.css"></link>
 <script src="./pikachu/js/main.js"></script>
 <script src="./pikachu/vendor/jquery.min.js"></script>
@@ -340,7 +212,7 @@
 <script src="./js/sticky-topbar.js"> </script>
 <script src="./js/smoothly-navigation.js"> </script>
 <script src="./js/message.js"></script>
-<script  src="./js/tools.js"></script>
+
 
 
 
